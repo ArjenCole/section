@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<mcElement>
+  <Name></Name>
+  <Category>箱涵</Category>
+  <Depth>3+3.9+0.1</Depth>
+  <Amount>100</Amount>
+  <showPEname>箱涵围护-浅</showPEname>
+  <showPFname>多地基原则</showPFname>
+  <mainPEname>箱涵围护-浅</mainPEname>
+  <SizeB>10.2</SizeB>
+  <SizeH>3.9000000000000004</SizeH>
+  <Source></Source>
+  <PEname>
+    <key>箱涵围护-浅</key>
+    <value>1</value>
+  </PEname>
+  <PFname>
+    <key>箱涵地基-浅</key>
+    <value>0.74</value>
+  </PFname>
+  <PFname>
+    <key>箱涵地基-复合</key>
+    <value>0.26</value>
+  </PFname>
+  <Param>
+    <key>净宽 m(含内壁厚度)</key>
+    <value>9.5</value>
+  </Param>
+  <Param>
+    <key>净高 m</key>
+    <value>3.2</value>
+  </Param>
+  <Param>
+    <key>底板厚 mm</key>
+    <value>350</value>
+  </Param>
+  <Param>
+    <key>顶板厚 mm</key>
+    <value>350</value>
+  </Param>
+  <Param>
+    <key>外壁厚 mm</key>
+    <value>350</value>
+  </Param>
+  <Param>
+    <key>内壁 道</key>
+    <value>2</value>
+  </Param>
+  <Param>
+    <key>内壁厚 mm</key>
+    <value>300</value>
+  </Param>
+</mcElement>
