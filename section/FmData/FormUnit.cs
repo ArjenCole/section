@@ -247,7 +247,7 @@ namespace section
             {
                 rtmE = new mcE7();
             }
-            else if (pDN == "" && (SourceStr.Contains("×") || SourceStr.Contains("*") || SourceStr.Contains("x") || pDefaultParam != null)) 
+            else if (pDN == "" && (SourceStr.Contains("×") || SourceStr.Contains("*") || SourceStr.Contains("x") || SourceStr.Contains("X") || pDefaultParam != null)) 
             {
                 rtmE = getmcE3(SourceStr, pDefaultParam);
             }
