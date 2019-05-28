@@ -49,6 +49,7 @@ namespace section
 
             //}
 
+            mscMslns.CheckPath(pPath);
             doc.Save(pPath);//保存XML文件
         }
         static public mcDataCarrier ReadXml(string pPath)

@@ -38,6 +38,7 @@ namespace section
 
         private static void Init()
         {
+            mscMslns.CheckPath(Path);
             log = new StreamWriter(Path, true);
         }
         private static void Dispose()

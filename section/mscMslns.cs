@@ -110,5 +110,15 @@ namespace section
             }
             return rtName;
         }
+
+        public static void CheckPath(string pPath)
+        {
+            if (!File.Exists(pPath))
+            {
+                FileInfo fi = new FileInfo(pPath);
+                var di = fi.Directory;
+                di.Create();
+            }
+        }
     }
 }
