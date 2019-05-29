@@ -287,6 +287,7 @@ namespace section
             string tB = "", tH = "";
             SourceStr = SourceStr.Replace("*", "×");
             SourceStr = SourceStr.Replace("x", "×");
+            SourceStr = SourceStr.Replace("X", "×");
             string[] tSP = SourceStr.Split(new[] { "\t" }, StringSplitOptions.None);
             foreach (string feS in tSP)
             {
