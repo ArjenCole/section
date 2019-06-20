@@ -223,9 +223,12 @@ namespace section
         }
         protected override void Dispose(bool disposing)
         {
-            base.Dispose(disposing);
-            g.Dispose();
-            p.Dispose();
+            if (g != null)
+            {
+                base.Dispose(disposing);
+                g.Dispose();
+                p.Dispose();
+            }
         }
 
     }
