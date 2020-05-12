@@ -226,6 +226,10 @@ namespace section
                         workwidth = GetWidthOrB("金属类管道", mE.SizeB, WorkWidth);
                         grooveB = GetWidthOrB("金属类管道", mE.SizeB, GrooveB);
                     }
+                    else//其他未知构件
+                    {
+                        workwidth = GetWidthOrB("未知构件", mE.SizeB, WorkWidth);
+                    }
                 }
 
             }
