@@ -601,6 +601,11 @@ namespace section
                 version1_2_2_1();
                 currentVersion = commitUpdate("1.2.2.1");
             }
+            if (string.Compare(dc.fileVersion, "1.4.0.0") < 0)//增加未知构件的工作面宽度
+            {
+                version1_4_0_0();
+                currentVersion = commitUpdate("1.4.0.0");
+            }
 
             if (currentVersion != dc.fileVersion)
             {
@@ -626,6 +631,18 @@ namespace section
                     var t = fePE.WorkWidth["箱涵"];
                     fePE.WorkWidth.Remove("箱涵");
                     fePE.WorkWidth.Add("箱涵-管廊", t);
+                }
+        }
+        private static void version1_4_0_0()
+        {
+            foreach (mcPcpEnclosure fePE in dc.PE.Values)
+                if (!fePE.WorkWidth.Keys.Contains("未知构件"))
+                {
+                    var t = fePE.WorkWidth["混凝土管-刚性接口"];
+                    Dictionary<int, double> tmpDic = new Dictionary<int, double>();
+                    foreach (KeyValuePair<int, double> feKVP in t)
+                        tmpDic.Add(feKVP.Key, feKVP.Value);
+                    fePE.WorkWidth.Add("未知构件", tmpDic);
                 }
         }
         private static string commitUpdate(string pVersion)
