@@ -172,7 +172,7 @@ namespace section
         private static Dictionary<string, mcQ> cal_Fcpnts(mcComponent pmC, double pDepth, double pCount)
         {
             Dictionary<string, mcQ> rtD = new Dictionary<string, mcQ>();
-            double Bbottom = At.grooveB == 0 ? mE.SizeB + D10E3(At.t * 2 + At.a * 2 + At.workwidth * 2) : At.grooveB;
+            double Bbottom = At.grooveB == 0 ? mE.SizeB + D10E3(At.t * 2 + At.a * 2 + At.workwidth * 2) : D10E3(At.grooveB);
             rtD = pmC.Q(pDepth, Bbottom, pCount);
             return rtD;
         }
