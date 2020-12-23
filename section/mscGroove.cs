@@ -69,10 +69,18 @@ namespace section
 
             List<mcReplacement> Backfill = new List<mcReplacement>();//分层回填列表
             #region 编写分层回填列表
-            for (int i = pmPF.mList.Count - 1; i >= 0; i--)//把换填加入回填列表
-                Backfill.Add(D10E3(pmPF.mList[i]));
+
             pDepth = Math.Max(0, pDepth);
-            double remainDepth = pDepth - pmPF.TiA / 1000.0;
+            double remainDepth = pDepth;
+
+            for (int i = pmPF.mList.Count - 1; i >= 0; i--)//把换填加入回填列表
+            {
+                ///Backfill.Add(D10E3(pmPF.mList[i]));
+                Backfill.Add(new mcReplacement("换填|" + pmPF.mList[i].Name + "|m3", minH(D10E3(pmPF.mList[i].H), remainDepth, out remainDepth)));
+            }
+            remainDepth = pDepth - D10E3(pmPF.TiA);
+            if (remainDepth < 0)
+                remainDepth = 0;
 
             Backfill.Add(new mcReplacement("垫层|" + mainPE.Cush.Name + "|m3", minH(D10E3(At.C1 + At.C2), remainDepth,out remainDepth)));
             Backfill.Add(new mcReplacement("回填|" + mainPE.DockL + "|m3", minH(mE.SizeH / 2 + D10E3(At.t - At.C2), remainDepth,out remainDepth)));
@@ -102,7 +110,7 @@ namespace section
                     rtDic = PlusDic_StrmcQ(rtDic, Backfill[i].Name, tmpQ);//计入对应回填量
                     Hcurrent = Hcurrent + Hdelta;//标高向上移动
                     Bcurrent += Hdelta * slope * 2;//当前标高宽度计算
-                    if ((Hcurrent == stepHeight[step]) && step > 0) //判断是否处于分级标高
+                    if ((Hcurrent == stepHeight[step]) && (step > 0))  //判断是否处于分级标高
                     {
                         step--;//围护分级选择向上移动
                         if ((stepHeight[step] != stepHeight[step + 1]) && stepHeight[step + 1] != 0)
