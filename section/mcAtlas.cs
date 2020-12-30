@@ -274,7 +274,7 @@ namespace section
         private double GetWidthOrB(string pCat, double pDN, Dictionary<string, Dictionary<int, double>> pSheet)
         {
             int tInt = Convert.ToInt32(Math.Round(pDN * 1000 / 100.0, 0) * 100);
-            if (tInt > pSheet[pCat].Last().Value)
+            if (tInt > pSheet[pCat].Last().Key)
                 return 1500.00;
             else
                 return pSheet[pCat][tInt];
