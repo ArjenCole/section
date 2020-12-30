@@ -275,7 +275,7 @@ namespace section
         {
             int tInt = Convert.ToInt32(Math.Round(pDN * 1000 / 100.0, 0) * 100);
             if (tInt > pSheet[pCat].Last().Key)
-                return 1500.00;
+                return pSheet[pCat].Last().Value;
             else
                 return pSheet[pCat][tInt];
         }
