@@ -117,6 +117,11 @@ namespace section
                             expression = "D = '" + tmpD + "' and level = '" + tmpLevel + "'";
                             GetRowsByFilter(pvDS.Tables[0], expression);
                         }
+                        if (t == 0)
+                        {
+                            expression = "D = '" + "3000" + "' and level = '" + tmpLevel + "'";
+                            GetRowsByFilter(pvDS.Tables[0], expression);
+                        }
                         workwidth = GetWidthOrB("混凝土管-刚性接口", mE.SizeB, WorkWidth);
                         grooveB = GetWidthOrB("混凝土管-刚性接口", mE.SizeB, GrooveB);
                     }
@@ -131,6 +136,11 @@ namespace section
 
                         expression = "D = '" + tmpD + "' and angle = '" + tmpAngel + "' and level = '" + tmpLevel + "'";
                         GetRowsByFilter(pvDS.Tables[1], expression);
+                        if (t == 0)
+                        {
+                            expression = "D = '" + "3000" + "' and angle = '" + tmpAngel + "' and level = '" + tmpLevel + "'";
+                            GetRowsByFilter(pvDS.Tables[1], expression);
+                        }
                         workwidth = GetWidthOrB("混凝土管-刚性接口", mE.SizeB, WorkWidth);
                         grooveB = GetWidthOrB("混凝土管-刚性接口", mE.SizeB, GrooveB);
                     }
