@@ -131,7 +131,7 @@ namespace section
 
                         expression = "D = '" + tmpD + "' and angle = '" + tmpAngel + "' and level = '" + tmpLevel + "'";
                         GetRowsByFilter(pvDS.Tables[1], expression);
-                        workwidth = 0;
+                        workwidth = GetWidthOrB("混凝土管-刚性接口", mE.SizeB, WorkWidth);
                         grooveB = GetWidthOrB("混凝土管-刚性接口", mE.SizeB, GrooveB);
                     }
                 }
